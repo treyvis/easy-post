@@ -1,5 +1,7 @@
 const Easypost = require('node-easypost');
 const api = new Easypost('UHk0rNTF3DeRs9oMVnhnHA');
+const OpenURL = require('openurl');
+
 
 const fromAddress = new api.Address({
   company: 'R&R BBQ',
@@ -37,8 +39,13 @@ const shipment = new api.Shipment({
   parcel: parcel
 });
 
-shipment.save().then(res => {
-  shipment.buy(shipment.lowestRate(['USPS'], ['First'])).then(console.log);
+shipment.save().then(() => {
+  shipment.buy(shipment.lowestRate(['USPS'], ['First'])).then(res => {
+  	console.log(res.postage_label.label_url);
+  	console.log(res.tracker.public_url);
+  	OpenURL.open(res.postage_label.label_url);
+  	OpenURL.open(res.tracker.public_url);
+  });
 });
 
 
