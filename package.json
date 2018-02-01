@@ -1,0 +1,14 @@
+{
+  "name": "easy-post",
+  "version": "1.0.0",
+  "description": "Easy-post project",
+  "main": "easy-post.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Trey davis",
+  "license": "ISC",
+  "dependencies": {
+    "node-easypost": "^3.0.0-rc.21"
+  }
+}
