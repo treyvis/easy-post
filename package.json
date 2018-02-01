@@ -9,6 +9,7 @@
   "author": "Trey davis",
   "license": "ISC",
   "dependencies": {
-    "node-easypost": "^3.0.0-rc.21"
+    "node-easypost": "^3.0.0-rc.21",
+    "openurl": "^1.1.1"
   }
 }
